@@ -6,7 +6,7 @@ import com.qsmaxmin.qsbase.common.utils.QsHelper;
 import com.qsmaxmin.qsbase.common.viewbind.annotation.OnClick;
 import com.qsmaxmin.qsbase.mvp.QsActivity;
 import com.review.android.R;
-import com.review.android.ipc.AIDLTestActivity;
+import com.review.android.ipc.aidl.AIDLTestActivity;
 
 public class MainActivity extends QsActivity {
 

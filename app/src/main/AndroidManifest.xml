@@ -18,7 +18,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ipc.AIDLTestActivity"/>
+        <!--service start-->
+        <service
+            android:name=".ipc.aidl.AIDLService"
+            android:process=":aidl" />
+
+        <!--service end-->
+
+        <activity android:name=".ipc.aidl.AIDLTestActivity" />
     </application>
 
 </manifest>
