@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.review.android">
 
+    <!--指纹-->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
     <application
         android:name=".GlobalApplication"
         android:allowBackup="true"
@@ -10,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,14 +21,15 @@
             </intent-filter>
         </activity>
 
-        <!--service start-->
+        <!-- service start -->
         <service
             android:name=".ipc.aidl.AIDLService"
             android:process=":aidl" />
 
-        <!--service end-->
+        <!-- service end -->
 
         <activity android:name=".ipc.aidl.AIDLTestActivity" />
+        <activity android:name=".media.fingerprint.FingerPrintActivity"/>
     </application>
 
 </manifest>

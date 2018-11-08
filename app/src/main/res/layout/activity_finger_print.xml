@@ -6,17 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_aidl"
+    <TextView
+        android:id="@id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aidl" />
-
-
-    <Button
-        android:id="@+id/btn_fingerPrint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="指纹验证" />
+        android:layout_margin="15dp"
+        android:text="准备验证"
+        android:textColor="@color/color_black"
+        android:textSize="20sp" />
 
 </LinearLayout>

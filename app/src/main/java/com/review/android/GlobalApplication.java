@@ -1,8 +1,11 @@
 package com.review.android;
 
+import android.support.multidex.MultiDex;
+
 import com.qsmaxmin.qsbase.QsApplication;
 import com.qsmaxmin.qsbase.common.http.HttpBuilder;
 import com.qsmaxmin.qsbase.common.log.L;
+import com.qsmaxmin.qsbase.common.utils.QsHelper;
 
 import okhttp3.Response;
 
@@ -38,5 +41,7 @@ public class GlobalApplication extends QsApplication {
     public void onCreate() {
         super.onCreate();
         L.i(tag, "当前主进程为：" + android.os.Process.myPid());
+        QsHelper.getInstance().init(this);
+        MultiDex.install(this);
     }
 }
