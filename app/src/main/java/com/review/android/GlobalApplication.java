@@ -1,5 +1,6 @@
 package com.review.android;
 
+import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.qsmaxmin.qsbase.QsApplication;
@@ -42,6 +43,12 @@ public class GlobalApplication extends QsApplication {
         super.onCreate();
         L.i(tag, "当前主进程为：" + android.os.Process.myPid());
         QsHelper.getInstance().init(this);
-        MultiDex.install(this);
+
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
     }
 }
