@@ -25,4 +25,10 @@
         android:layout_height="wrap_content"
         android:text="ContentProvider" />
 
+    <Button
+        android:id="@+id/btn_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="弹性滑动" />
+
 </LinearLayout>
