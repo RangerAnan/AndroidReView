@@ -1,0 +1,17 @@
+/*
+*
+* 全局配置文件
+*
+**/
+
+ext {
+
+    //版本统一配置
+    compileSdkVersion = 27
+    minSdkVersion = 17
+    targetSdkVersion = 27
+    supportVersion = '27.1.1'
+
+    //my_view是否为module
+    myViewIsModule = true
+}

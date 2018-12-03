@@ -31,4 +31,10 @@
         android:layout_height="wrap_content"
         android:text="弹性滑动" />
 
+    <Button
+        android:id="@+id/btn_view_module"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转viewModule" />
+
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.review.android.main;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.qsmaxmin.qsbase.common.utils.QsHelper;
 import com.qsmaxmin.qsbase.common.viewbind.annotation.OnClick;
@@ -26,7 +27,7 @@ public class MainActivity extends QsActivity {
     }
 
     @Override
-    @OnClick({R.id.btn_aidl, R.id.btn_fingerPrint, R.id.btn_provider, R.id.btn_scroll})
+    @OnClick({R.id.btn_aidl, R.id.btn_fingerPrint, R.id.btn_provider, R.id.btn_scroll, R.id.btn_view_module})
     public void onViewClick(View view) {
         switch (view.getId()) {
             case R.id.btn_aidl:
@@ -40,6 +41,10 @@ public class MainActivity extends QsActivity {
                 break;
             case R.id.btn_scroll:
                 QsHelper.getInstance().intent2Activity(TestScrollActivity.class);
+                break;
+            case R.id.btn_view_module:
+//                QsHelper.getInstance().intent2Activity(TestScrollActivity.class);
+                Toast.makeText(QsHelper.getInstance().getApplication(), "MyViewModule", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
