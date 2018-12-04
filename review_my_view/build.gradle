@@ -35,6 +35,20 @@ android {
         }
     }
 
+    sourceSets {
+        main {
+            if (Boolean.valueOf(rootProject.ext.myViewIsModule)) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/module文件夹下的所有文件
+                    exclude '*module'
+                }
+            }
+        }
+    }
+
 }
 
 dependencies {
