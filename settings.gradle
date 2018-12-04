@@ -1,1 +1,1 @@
-include ':app', ':review_my_view'
+include ':app', ':review_my_view', ':androidbase'

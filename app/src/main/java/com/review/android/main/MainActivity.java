@@ -2,8 +2,8 @@ package com.review.android.main;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.qsmaxmin.qsbase.common.utils.QsHelper;
 import com.qsmaxmin.qsbase.common.viewbind.annotation.OnClick;
 import com.qsmaxmin.qsbase.mvp.QsActivity;
@@ -43,8 +43,7 @@ public class MainActivity extends QsActivity {
                 QsHelper.getInstance().intent2Activity(TestScrollActivity.class);
                 break;
             case R.id.btn_view_module:
-//                QsHelper.getInstance().intent2Activity(TestScrollActivity.class);
-                Toast.makeText(QsHelper.getInstance().getApplication(), "MyViewModule", Toast.LENGTH_SHORT).show();
+                ARouter.getInstance().build("/view/MainViewActivity").navigation();
                 break;
             default:
                 break;
