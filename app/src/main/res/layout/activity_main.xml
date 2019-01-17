@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="跳转viewModule" />
 
+    <Button
+        android:id="@+id/btn_webview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转WebView" />
+
 </LinearLayout>

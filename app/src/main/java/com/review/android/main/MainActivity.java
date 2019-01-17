@@ -12,6 +12,7 @@ import com.review.android.ipc.aidl.AIDLTestActivity;
 import com.review.android.ipc.contentprovider.BookProviderActivity;
 import com.review.android.media.fingerprint.FingerPrintActivity;
 import com.review.android.view.event.TestScrollActivity;
+import com.review.android.webview.WebViewActivity;
 
 public class MainActivity extends QsActivity {
 
@@ -27,7 +28,8 @@ public class MainActivity extends QsActivity {
     }
 
     @Override
-    @OnClick({R.id.btn_aidl, R.id.btn_fingerPrint, R.id.btn_provider, R.id.btn_scroll, R.id.btn_view_module})
+    @OnClick({R.id.btn_aidl, R.id.btn_fingerPrint, R.id.btn_provider, R.id.btn_scroll, R.id.btn_view_module
+            , R.id.btn_webview})
     public void onViewClick(View view) {
         switch (view.getId()) {
             case R.id.btn_aidl:
@@ -44,6 +46,10 @@ public class MainActivity extends QsActivity {
                 break;
             case R.id.btn_view_module:
                 ARouter.getInstance().build("/view/MainViewActivity").navigation();
+                break;
+            case R.id.btn_webview:
+//                ARouter.getInstance().build("/view/WebViewActivity").navigation();
+                QsHelper.getInstance().intent2Activity(WebViewActivity.class);
                 break;
             default:
                 break;
