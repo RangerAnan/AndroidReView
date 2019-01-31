@@ -7,6 +7,7 @@ import android.view.View;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.qsmaxmin.qsbase.common.aspect.ThreadPoint;
 import com.qsmaxmin.qsbase.common.aspect.ThreadType;
+import com.qsmaxmin.qsbase.common.log.L;
 import com.qsmaxmin.qsbase.common.utils.QsHelper;
 import com.qsmaxmin.qsbase.common.viewbind.annotation.OnClick;
 import com.qsmaxmin.qsbase.mvp.QsActivity;
@@ -15,11 +16,20 @@ import com.qsmaxmin.qsbase.aop.TestAnnoTrace;
 import com.review.android.ipc.aidl.AIDLTestActivity;
 import com.review.android.ipc.contentprovider.BookProviderActivity;
 import com.review.android.media.fingerprint.FingerPrintActivity;
+import com.review.android.thirdframework.TestModel;
+import com.review.android.thirdframework.eventbus.RanSubscribe;
+import com.review.android.thirdframework.eventbus.RangerBus;
 import com.review.android.view.event.TestScrollActivity;
 import com.review.android.webview.WebViewActivity;
 
 public class MainActivity extends QsActivity {
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        RangerBus.getInstance().register(this);
+    }
 
     @Override
     public int layoutId() {
@@ -70,5 +80,16 @@ public class MainActivity extends QsActivity {
             sum = sum + i;
         }
         Log.i(initTag(), "--calcSum--sum:" + sum + ";" + Thread.currentThread().getName());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        RangerBus.getInstance().unRegister(this);
+    }
+
+    @RanSubscribe
+    public void acceptRangerBus(TestModel model) {
+        L.i(initTag(), "收到事件啦~" + model.desc);
     }
 }

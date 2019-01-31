@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import com.qsmaxmin.qsbase.mvp.QsActivity;
 import com.review.android.R;
+import com.review.android.thirdframework.TestModel;
+import com.review.android.thirdframework.eventbus.RangerBus;
 
 public class BookProviderActivity extends QsActivity {
 
@@ -22,5 +24,8 @@ public class BookProviderActivity extends QsActivity {
         getContentResolver().query(uri, null, null, null, null);
         getContentResolver().query(uri, null, null, null, null);
         getContentResolver().query(uri, null, null, null, null);
+
+
+        RangerBus.getInstance().postEvent(new TestModel("啦啦啦"));
     }
 }
