@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 
 import com.qsmaxmin.qsbase.common.log.L;
+import com.qsmaxmin.qsbase.common.utils.QsHelper;
 import com.qsmaxmin.qsbase.mvp.QsActivity;
 import com.review.android.R;
 
@@ -24,6 +25,7 @@ public class TestScrollActivity extends QsActivity {
 
     @Override
     public void initData(Bundle bundle) {
+
 
     }
 
