@@ -47,8 +47,9 @@
         <activity android:name=".ipc.aidl.AIDLTestActivity" />
         <activity android:name=".media.fingerprint.FingerPrintActivity" />
         <activity android:name=".ipc.contentprovider.BookProviderActivity" />
-        <activity android:name=".view.event.TestScrollActivity"/>
-        <activity android:name=".webview.WebViewActivity"/>
+        <activity android:name=".view.event.TestScrollActivity" />
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".view.button.TestButtonShapeActivity"></activity>
     </application>
 
 </manifest>

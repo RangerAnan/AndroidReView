@@ -19,6 +19,7 @@ import com.review.android.media.fingerprint.FingerPrintActivity;
 import com.review.android.thirdframework.TestModel;
 import com.review.android.thirdframework.eventbus.RanSubscribe;
 import com.review.android.thirdframework.eventbus.RangerBus;
+import com.review.android.view.button.TestButtonShapeActivity;
 import com.review.android.view.event.TestScrollActivity;
 import com.review.android.webview.WebViewActivity;
 
@@ -43,7 +44,7 @@ public class MainActivity extends QsActivity {
 
     @Override
     @OnClick({R.id.btn_aidl, R.id.btn_fingerPrint, R.id.btn_provider, R.id.btn_scroll, R.id.btn_view_module
-            , R.id.btn_webview, R.id.btn_aspect})
+            , R.id.btn_webview, R.id.btn_aspect,R.id.btn_shape})
     public void onViewClick(View view) {
         switch (view.getId()) {
             case R.id.btn_aidl:
@@ -68,6 +69,9 @@ public class MainActivity extends QsActivity {
             case R.id.btn_aspect:
                 Log.i(initTag(), "threadName:" + Thread.currentThread().getName());
                 calcSum();
+                break;
+            case R.id.btn_shape:
+                QsHelper.getInstance().intent2Activity(TestButtonShapeActivity.class);
                 break;
             default:
                 break;
